@@ -8,7 +8,6 @@ const amount = document.querySelector("#amount");
 const price = document.querySelector("#price");
 
 let priceOfMovie = pickUpMovie.value;
-console.log(priceOfMovie);
 
 // Adding event listeners and creating functions
 
@@ -28,8 +27,7 @@ const mainFunctional = () => {
 // Getting items from local storage
 const getItemsFromLocalStorage = () => {
     const storedItems = JSON.parse(localStorage.getItem("activeSeats"));
-    console.log(storedItems);
-    if (storedItems.length > 0 && storedItems !== null) {
+    if (storedItems && storedItems.length > 0) {
         storedItems.forEach((i) => {
             seats[i].classList.add("active");
         });
