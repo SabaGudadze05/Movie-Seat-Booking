@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="shortcut icon" href="./movie-seat.png" type="image/x-icon" />
+        <title>Seat Booking</title>
+    </head>
+    <body>
+        <div class="container">
+            <main>
+                <section class="main_section_movie_selector">
+                    <p class="main_section_movie_selector_p">Pick a movie:</p>
+                    <select id="movie_select">
+                        <option value="10">Me before you(10$)</option>
+                        <option value="12">Anaabilla(12$)</option>
+                        <option value="8">Joker(8$)</option>
+                        <option value="9">Spirder Man(9$)</option>
+                    </select>
+                </section>
+                <section class="seat_properties">
+                    <ul>
+                        <li>
+                            <div class="seats"></div>
+                            <small>N/A</small>
+                        </li>
+                        <li>
+                            <div class="seats active"></div>
+                            <small>Selected</small>
+                        </li>
+                        <li>
+                            <div class="seats blocked"></div>
+                            <small>Occupied</small>
+                        </li>
+                    </ul>
+                </section>
+                <!-- <div class="screen_analog"></div> -->
+                <section class="seat_section" id="seats_section">
+                    <div class="screen_analog"></div>
+                    <section class="seat_section_row_section">
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                    </section>
+                    <section class="seat_section_row_section">
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                    </section>
+                    <section class="seat_section_row_section">
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                    </section>
+                    <section class="seat_section_row_section">
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                    </section>
+                    <section class="seat_section_row_section">
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                    </section>
+                    <section class="seat_section_row_section">
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats blocked"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                        <div class="seats"></div>
+                    </section>
+                </section>
+                <footer>
+                    <p class="footer_text">
+                        You have selected <span id="amount">0</span> seats for a
+                        price of <span id="price">0</span>
+                    </p>
+                </footer>
+            </main>
+        </div>
+        <script src="/src/main.js"></script>
+    </body>
+</html>

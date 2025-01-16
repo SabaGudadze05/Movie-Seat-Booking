@@ -1,0 +1,91 @@
+/* importing fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+/* container */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242333;
+    color: #ffffff;
+}
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+}
+.main_section_movie_selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.main_section_movie_selector p {
+    font-family: "Lato", serif;
+}
+.main_section_movie_selector select {
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 15px;
+}
+.seats {
+    background-color: #44444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.active {
+    background-color: #6feaf6;
+}
+.blocked {
+    background-color: #ffffff;
+}
+.seat_properties ul {
+    display: flex;
+    gap: 20px;
+    padding: 8px 14px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.seat_properties li {
+    display: flex;
+    gap: 6px;
+    font-family: "Lato", serif;
+    color: #777;
+}
+
+.screen_analog {
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+    margin-bottom: 18px;
+}
+.seat_section {
+    perspective: 700px;
+}
+
+.seat_section_row_section {
+    display: flex;
+}
+.seat_section_row_section .active:hover {
+    transform: scale(1.1);
+}
+.seat_section_row_section .seats:nth-child(2),
+.seat_section_row_section .seats:nth-child(6) {
+    margin-right: 15px;
+}
+.seat_section_row_section .seats {
+    cursor: pointer;
+}
+.footer_text {
+    font-family: "Lato", serif;
+}
+.footer_text span {
+    color: #6feaf6;
+}
