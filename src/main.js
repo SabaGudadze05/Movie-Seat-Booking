@@ -1,4 +1,4 @@
-// declaring variables
+// declearing variables;
 const pickUpMovie = document.querySelector("select");
 const seatsSection = document.querySelector("#seats_section");
 const seats = document.querySelectorAll(
@@ -8,10 +8,11 @@ const amount = document.querySelector("#amount");
 const price = document.querySelector("#price");
 
 let priceOfMovie = pickUpMovie.value;
+console.log(priceOfMovie);
 
-// creating function and adding listeners
+// Adding event listeners and creating functions
 
-const updateBookingDetails = () => {
+const mainFunctional = () => {
     const activeSeats = document.querySelectorAll(
         ".seat_section_row_section .seats.active"
     );
@@ -19,28 +20,44 @@ const updateBookingDetails = () => {
         [...seats].indexOf(seat)
     );
     localStorage.setItem("activeSeats", JSON.stringify(indexOfActiveSeats));
+
     amount.textContent = activeSeats.length;
     price.textContent = activeSeats.length * priceOfMovie;
 };
 
+// Getting items from local storage
 const getItemsFromLocalStorage = () => {
-    const storedItems = JSON.parse(localStorage.getItem("activeSeats")) || [];
-    storedItems.forEach((i) => seats[i]?.classList.add("active"));
+    const storedItems = JSON.parse(localStorage.getItem("activeSeats"));
+    console.log(storedItems);
+    if (storedItems.length > 0 && storedItems !== null) {
+        storedItems.forEach((i) => {
+            seats[i].classList.add("active");
+        });
+    }
 
-    const movieIndex = localStorage.getItem("MovieIndex");
-    const moviePrice = localStorage.getItem("MoviePrice");
-    if (movieIndex !== null) pickUpMovie.selectedIndex = movieIndex;
-    if (moviePrice !== null) priceOfMovie = moviePrice;
+    const movieIndexOfLocalStorage = JSON.parse(
+        localStorage.getItem("MovieIndex")
+    );
+    const moviePriceLocalStorage = JSON.parse(
+        localStorage.getItem("MoviePrice")
+    );
+    if (movieIndexOfLocalStorage !== null) {
+        pickUpMovie.selectedIndex = movieIndexOfLocalStorage;
+    }
+
+    if (moviePriceLocalStorage !== null) {
+        priceOfMovie = moviePriceLocalStorage;
+    }
 };
-
-
+getItemsFromLocalStorage();
 
 pickUpMovie.addEventListener("change", (e) => {
     priceOfMovie = e.target.value;
-    updateBookingDetails();
+    mainFunctional();
     storeMoviePrice(e.target.selectedIndex, e.target.value);
 });
 
+// Creating Function to set movie prices into local storage;
 const storeMoviePrice = (movieIndex, moviePrice) => {
     localStorage.setItem("MoviePrice", moviePrice);
     localStorage.setItem("MovieIndex", movieIndex);
@@ -52,11 +69,9 @@ seatsSection.addEventListener("click", (e) => {
         !e.target.classList.contains("blocked")
     ) {
         e.target.classList.toggle("active");
-        updateBookingDetails();
+        mainFunctional();
     }
 });
 
-// Running functions
-
-getItemsFromLocalStorage();
-updateBookingDetails();
+// All Done <3
+mainFunctional();
